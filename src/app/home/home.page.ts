@@ -23,7 +23,7 @@ export class HomePage {
     // Request needed libraries.
     //@ts-ignore
     const { Map } = await google.maps.importLibrary("maps") as google.maps.MapsLibrary;
-    // const { AdvancedMarkerView } = await google.maps.importLibrary("marker") as google.maps.MarkerLibrary;
+     const { AdvancedMarkerElement } = await google.maps.importLibrary("marker") as google.maps.MarkerLibrary;
 
     // The map, centered at Uluru
     this.map = new Map(
@@ -35,13 +35,13 @@ export class HomePage {
       }
     );
 
-    /* The marker, positioned at Uluru
-    const marker = new AdvancedMarkerView({
-      map: map,
+     //The marker, positioned at Uluru
+    const marker = new AdvancedMarkerElement({
+      map: this.map,
       position: position,
       title: 'Uluru'
     });
-    */
+    
   }
 
   ionViewWillEnter(){
